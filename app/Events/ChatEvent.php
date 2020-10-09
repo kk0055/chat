@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -24,8 +25,9 @@ class ChatEvent implements ShouldBroadcast
      */
     public function __construct($message, User $user)
     {
-        return $this->message = $message;
-        return $this->user = $user;
+         $this->message = $message;
+         $this->user = $user->name;
+         $this->dontBroadcastToCurrentUser();
     }
 
     /**
@@ -37,4 +39,9 @@ class ChatEvent implements ShouldBroadcast
     {
         return new PrivateChannel('chat');
     }
+
+    // public function broadcastAs()
+    // {
+    //     return 'private-chat-event';
+    // }
 }
