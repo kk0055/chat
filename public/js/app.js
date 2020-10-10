@@ -56688,11 +56688,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       axios.post('/saveToSession', {
         chat: _this4.chat
-      }).then(function (response) {// if(response.data != '')
-        // {
-        //   this.chat = response.data;
-        // }
-      })["catch"](function (error) {
+      }).then(function (response) {})["catch"](function (error) {
         console.log(error);
       }); // console.log(e);
     }) // Echo.private('chat')
@@ -56708,11 +56704,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     }).joining(function (user) {
       _this4.numberOfUsers += 1;
 
-      _this4.$toaster.success(user.name + 'is joined');
+      _this4.$toaster.success(user.name + ' is joined');
     }).leaving(function (user) {
       _this4.numberOfUsers -= 1;
 
-      _this4.$toaster.warning(user.name + 'is left');
+      _this4.$toaster.warning(user.name + ' is left');
     });
   }
 });

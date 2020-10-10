@@ -89,7 +89,8 @@ const app = new Vue({
            console.log(error);
          });
       },
-      deleteSession(){
+      deleteSession()
+      {
         axios.post('/deleteSession')
         .then(response => this.$toaster.success('Chat history is deleted'));
       }
@@ -107,11 +108,6 @@ const app = new Vue({
             chat :this.chat
         })
           .then(response => {
-            // if(response.data != '')
-            // {
-            //   this.chat = response.data;
-            // }
-         
          })
          .catch(error => {
            console.log(error);
@@ -135,11 +131,11 @@ const app = new Vue({
     })
     .joining((user) => {
       this.numberOfUsers += 1;
-      this.$toaster.success(user.name+'is joined');
+      this.$toaster.success(user.name +' is joined');
     })
     .leaving((user) => {
       this.numberOfUsers -= 1;
-      this.$toaster.warning(user.name+'is left');
+      this.$toaster.warning(user.name +' is left');
     });
     }
 });

@@ -22,7 +22,7 @@
         <li class="list-group-item active">Chat room <span class="badge badge-pill badge-warning">@{{ numberOfUsers }} </span>
        
         </li>
-        <div class="badge badge-pill badge-primary "> @{{ typing }}</div>
+        <div class="badge badge-pill  "> @{{ typing }}</div>
         <ul class="list-group" v-chat-scroll>
       
       <message
